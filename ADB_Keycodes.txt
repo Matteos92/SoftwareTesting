@@ -1,0 +1,69 @@
+adb install <path_to_the_APK_file>
+adb pull <path_to_the_remote_object> <path_to_the_local_destination>
+adb push <path_to_the_local_object> <path_to_the_remote_destination>
+
+adb uninstall pl.tvsmart.app
+adb install C:/Users/mgrauman/Downloads/tv-prod-debug-3.8.36.apk
+adb shell pm clear pl.tvsmart.app
+
+adb pull /storage/emulated/0/Pictures/Screenshots/ C:/Users/mgrauman/Downloads/
+
+adb push C:/Users/mgrauman/Downloads/s905x2-u212-dv8519-atv-Vectra-v10.1.43-2209231602-sbv3-signed.zip /storage/emulated/0/Download/
+adb push C:/Users/mgrauman/Downloads/s905x2-u212-dv8519-atv-Vectra-v10.1.65-2211091927-sbv3-signed.zip /storage/emulated/0/Download/
+
+adb shell rm -r /storage/emulated/0/Download/s905x2-u212-dv8519-atv-Vectra-v10.1.65-2211091927-sbv3-signed.zip
+
+adb shell pm list packages
+adb shell pm enable <package_to_enable>
+adb shell pm disable-user --user 0 <package_to_disable>
+
+adb shell monkey -p com.lonelycatgames.Xplore 1 //uruchomienie apki z poziomu ADB
+adb shell monkey -p io.github.visnkmr.bapl 1 //uruchomienie apki Background Apps z poziomu ADB
+adb shell monkey -p com.droidlogic.otaupgrade 1 //Firmware upgrade
+adb shell pm clear pl.vectra.ott.box
+
+adb shell getprop ro.opa.device_model_id //podaje nazwę modelu boxa
+
+https://www.guidingtech.com/15008/adb-control-keypress-broken-android-keys/
+https://elementalx.org/button-mapper/android-key-codes/
+
+adb shell input keyevent 3 //HOME
+adb shell input keyevent 4 //Back
+
+adb shell input keyevent 7 // 0
+adb shell input keyevent 8 // 1
+adb shell input keyevent 9 // 2
+adb shell input keyevent 10 // 3
+
+adb shell input keyevent 8
+adb shell "input keyevent 8 && input keyevent 9" //NETFLIX
+adb shell "input keyevent 10 && input keyevent 14 && input keyevent 12" //C+ 4K
+adb shell "input keyevent 16 && input keyevent 7 && input keyevent 9" //Dorcel
+adb shell "input keyevent 8 && input keyevent 9 && input keyevent 10 && input keyevent 11" // PIN 1234
+
+adb shell input keyevent 19 // Góra
+adb shell input keyevent 20 // Dół
+adb shell input keyevent 21 // Prawo
+adb shell input keyevent 22 // Lewo
+
+adb shell input keyevent 23 // OK
+adb shell input keyevent 24 // Volume UP
+adb shell input keyevent 25 // Volume DOWN
+adb shell input keyevent 26 // Power
+
+adb shell input keyevent 85 // Play/Pause 
+
+adb shell input keyevent 120 // PrintScreen
+adb shell input keyevent 164 // MUTE
+adb shell input keyevent 165 // INFO button
+adb shell input keyevent 166 // Channel UP
+adb shell input keyevent 167 // Channel Down
+adb shell input keyevent 172 // EPG
+
+adb shell input keyevent 183 // RED
+adb shell input keyevent 184 // GREEN
+adb shell input keyevent 185 // YELLOW
+adb shell input keyevent 186 // BLUE
+
+adb shell input keyevent 231 // Google Assist
+adb shell input keyevent 233 // Teletext
